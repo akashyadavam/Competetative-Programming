@@ -6,7 +6,7 @@ public class problem7{
          Scanner sc=new Scanner(System.in);
         int t=sc.nextInt();
         while(t-->0){
-            int n = sc.nextInt();
+             int n = sc.nextInt();
                HashMap<Integer, Integer> map = new HashMap<>();
 
             for (int i = 0; i < n; i++) {

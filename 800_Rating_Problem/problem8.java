@@ -9,7 +9,7 @@ public class problem8 {
         
 
         while (t-- > 0) {
-            int n = sc.nextInt();
+             int n = sc.nextInt();
             int m = sc.nextInt();
            String x=sc.next();
            String s=sc.next();

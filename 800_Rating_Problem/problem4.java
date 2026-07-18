@@ -5,7 +5,7 @@ public class problem4 {
         Scanner sc=new Scanner(System.in);
         int t=sc.nextInt();
         while(t-->0){
-            int n=sc.nextInt();
+             int n=sc.nextInt();
             if (n % 3 == 0)
                System.out.println("Second");
             else
