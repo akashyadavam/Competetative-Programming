@@ -1,28 +1,40 @@
 import java.util.Scanner;
 
-public class problem16{
+public class problem16 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         int t = sc.nextInt();
 
         while (t-- > 0) {
-            int n = sc.nextInt();
 
-            int oddCount = 0;
+            int n = sc.nextInt();
+            int[] a = new int[n];
 
             for (int i = 0; i < n; i++) {
-                int x = sc.nextInt();
+                a[i] = sc.nextInt();
+            }
 
-                if (x % 2 != 0) {
-                    oddCount++;
+            boolean sorted = true;
+            int minDiff = Integer.MAX_VALUE;
+
+            for (int i = 0; i < n - 1; i++) {
+
+                if (a[i] > a[i + 1]) {
+                    sorted = false;
+                    break;
+                }
+
+                int diff = a[i + 1] - a[i];
+                if (diff < minDiff) {
+                    minDiff = diff;
                 }
             }
 
-            if (oddCount % 2 == 0) {
-                System.out.println("YES");
+            if (!sorted) {
+                System.out.println(0);
             } else {
-                System.out.println("NO");
+                System.out.println(minDiff / 2 + 1);
             }
         }
     }

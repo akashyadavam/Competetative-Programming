@@ -1,46 +1,33 @@
 import java.util.Scanner;
 
 public class problem8 {
-
     public static void main(String[] args) {
          Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt(); 
+         while (t-- > 0) {
 
-        int t = sc.nextInt();
-        
-
-        while (t-- > 0) {
              int n = sc.nextInt();
-            int m = sc.nextInt();
-           String x=sc.next();
-           String s=sc.next();
-           int operation=0;
-           if(x.contains(s)){
-            System.out.println(0);
-            continue;
-           }
-           int ans=-1;
-           for(int i=1;i<=6;i++){
-            if(x.contains(s)){
-                ans=operation;
-                break;
+            int k = sc.nextInt();
 
+            int[] arr = new int[n];
+
+            for (int i = 0; i < n; i++) {
+                arr[i] = sc.nextInt();
+            }  
+            
+           boolean fla=false;
+            for (int i = 0; i < n; i++) {
+                if(arr[i]==k){
+                    fla=true;
+                    break;
+                }
+            } 
+            if(fla){
+                System.out.println("yes");
             }
             else{
-                  x+=x;
-                  operation++;
+                System.out.println("no");
             }
-           }
-           if (ans == -1 && x.contains(s)) {
-                 ans = operation;
-                   System.out.println(ans);
-                }
-             else{
-                 System.out.println(ans);
-
-             }   
-          
-           
-
     }
 }
 }

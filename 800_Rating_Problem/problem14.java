@@ -1,48 +1,33 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class problem14 {
-   public static void main(String[] args) {
-      Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
         int t = sc.nextInt();
 
-        while (t-- > 0) {
+             while (t-- > 0) {
+            int[] arr = new int[3];
 
-            int n = sc.nextInt();
-             int[] a = new int[n];
-             int max=Integer.MIN_VALUE;
-
-            for (int i = 0; i < n; i++) {
-                a[i] = sc.nextInt();
-                if(a[i]>max){
-                    max=a[i];
-                }
+            for (int i = 0; i <= 2; i++) {
+                arr[i] = sc.nextInt();
+            } 
+            int a=arr[0];
+            int b=arr[1];
+            int c=arr[2];
+            if(c%2==0){
+                b=b;
             }
-
-                ArrayList<Integer> b= new ArrayList<>();
-                ArrayList<Integer> c= new ArrayList<>();
-                 for (int i = 0; i < n; i++) {
-                    if(a[i]!=max){
-                    b.add(a[i]);}
-                    else{
-                        c.add(max);
-                    }
-
-                 }
-                 if(b.size()==0) {
-                    System.out.println(-1);continue;
-                 }
-                 System.out.println(b.size()+" "+c.size());
-                  for (int i = 0; i <b.size(); i++) {
-                 System.out.print(b.get(i)+" ");
-                }
-                 System.out.println();
-                   for (int i = 0; i <c.size(); i++) {
-                 System.out.print(c.get(i)+" ");}
-                 System.out.println();
-
-
+            else{
+                b=b-1;
             }
-   } 
+            if(a>b){
+                System.out.println("First");
+            }
+            else{
+                System.out.println("Second");
+            }
+            
+    }
+}
 }

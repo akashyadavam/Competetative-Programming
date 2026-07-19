@@ -1,40 +1,56 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class problem17 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
         int t = sc.nextInt();
-
         while (t-- > 0) {
-
             int n = sc.nextInt();
-            int[] a = new int[n];
-
-            for (int i = 0; i < n; i++) {
-                a[i] = sc.nextInt();
+            int k = sc.nextInt();
+            int x = sc.nextInt();
+            if (x != 1) {
+                System.out.println("YES");
+                System.out.println(n);
+                for (int i = 0; i < n; i++) {
+                    System.out.print(1 + " ");
+                }
+                System.out.println();
             }
 
-            boolean sorted = true;
-            int minDiff = Integer.MAX_VALUE;
+            else {
 
-            for (int i = 0; i < n - 1; i++) {
-
-                if (a[i] > a[i + 1]) {
-                    sorted = false;
-                    break;
+                if (k == 1) {
+                    System.out.println("NO");
+                }
+                else if (n % 2 == 0) {
+                    System.out.println("YES");
+                    System.out.println(n / 2);
+                    for (int i = 0; i < n / 2; i++) {
+                        System.out.print(2 + " ");
+                    }
+                    System.out.println();
                 }
 
-                int diff = a[i + 1] - a[i];
-                if (diff < minDiff) {
-                    minDiff = diff;
-                }
-            }
+                else {
 
-            if (!sorted) {
-                System.out.println(0);
-            } else {
-                System.out.println(minDiff / 2 + 1);
+                    if (k == 2) {
+                        System.out.println("NO");
+                    }
+
+                    // 3 available hai
+                    else {
+                        System.out.println("YES");
+                        System.out.println(1 + (n - 3) / 2);
+
+                        System.out.print(3 + " ");
+
+                        for (int i = 0; i < (n - 3) / 2; i++) {
+                            System.out.print(2 + " ");
+                        }
+
+                        System.out.println();
+                    }
+                }
             }
         }
     }

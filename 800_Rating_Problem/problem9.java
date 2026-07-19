@@ -2,32 +2,26 @@ import java.util.Scanner;
 
 public class problem9 {
     public static void main(String[] args) {
-         Scanner sc = new Scanner(System.in);
-        int t = sc.nextInt(); 
-         while (t-- > 0) {
-
-             int n = sc.nextInt();
-            int k = sc.nextInt();
-
-            int[] arr = new int[n];
-
-            for (int i = 0; i < n; i++) {
-                arr[i] = sc.nextInt();
-            }  
-            
-           boolean fla=false;
-            for (int i = 0; i < n; i++) {
-                if(arr[i]==k){
-                    fla=true;
-                    break;
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+          while (t-- > 0) {
+            int i,j;
+            int ans=0;
+            for(i=0;i<10;i++){
+                String  s=sc.next();
+                for(j=0;j<10;j++){
+                 int   top    = i;
+                  int  left   = j;
+                   int bottom = 9 - i;
+                    int right  = 9 - j;
+                    if(s.charAt(j)=='X'){
+                        int a=(Math.min(top,Math.min(left,Math.min(bottom,right))));
+                        ans=ans+a+1;
+                    }
                 }
             } 
-            if(fla){
-                System.out.println("yes");
-            }
-            else{
-                System.out.println("no");
-            }
+            System.out.println(ans);       
     }
+    
 }
 }
